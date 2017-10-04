@@ -1,0 +1,34 @@
+<!DOCTYPE html> {% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>First App</title>
+</head>
+
+<body>
+    <h1>Olá, aqui estão os registros de acesso:</h1>
+    {% if access_records %}
+    <table>
+        <thead>
+            <th>Nome do site</th>
+            <th>Data de acesso</th>
+        </thead>
+        {% for acc in access_records %}
+        <tr>
+            <td>{{acc.pagina}}</td>
+            <td>{{acc.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>Nenhum registro de acesso.</p>
+    {% endif %}
+
+    <!-- <img src="{% static 'images/Sri_Lanka.jpg' %}" alt="Sri Lanka"> -->
+</body>
+
+</html>

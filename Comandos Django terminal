@@ -1,0 +1,24 @@
+﻿sudo python get-pip.py		//instalar pip
+pip install virtualenv		//instalar virtualevn
+virtualenv env			//criar virtual
+pip install django		//instalar django
+
+
+
+django-admin startproject first_project //Criar projeto
+django-admin startapp first_app
+source ../venv/bin/activate  //ativa o env
+code .                       //abre a ide
+python manage.py runserver   //roda o servidor
+
+
+python manage.py makemigrations //migração do banco
+python manage.py migrate
+python manage.py shell //shell
+
+
+>>> topico = Topic(top_name="Redes Sociais")
+>>> topico.save()
+>>> topicos = Topic.objects.all()
+>>> topicos
+<QuerySet [<Topic: Redes Sociais>]>
